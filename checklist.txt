@@ -1,0 +1,6 @@
+learn django
+learn spring
+learn data structure & algo
+learn go
+learn react
+learn node.js
