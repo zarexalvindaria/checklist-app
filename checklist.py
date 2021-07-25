@@ -1,5 +1,6 @@
 # Checklist GUI application
 import tkinter as tk
+from tkinter import END
 
 # Define window
 root = tk.Tk()
@@ -15,6 +16,10 @@ button_color = "#e2cff4"
 root.config(bg=root_color)
 
 # Define functions
+def add_item():
+    """add an individual item to the list box"""
+    my_listbox.insert(END, list_entry.get())
+    list_entry.delete(0, END)
 
 
 
@@ -29,13 +34,16 @@ button_frame.pack()
 
 # Input frame layout
 list_entry = tk.Entry(input_frame, width=35, borderwidth=3, font=my_font)
-list_add_button = tk.Button(input_frame, text="Add Item", borderwidth=2, font=my_font, bg=button_color)
+list_add_button = tk.Button(input_frame, text="Add Item", borderwidth=2, font=my_font, bg=button_color, command=add_item)
 list_entry.grid(row=0, column=0, padx=5, pady=5)
 list_add_button.grid(row=0, column=1, padx=5, pady=5, ipadx=5)
 
 # Output frame layout
 my_scrollbar = tk.Scrollbar(output_frame)
-my_listbox = tk.Listbox(output_frame, height=15, width=45, borderwidth=3, font=my_font)
+my_listbox = tk.Listbox(output_frame, height=15, width=45, borderwidth=3, font=my_font, yscrollcommand=my_scrollbar.set)
+
+# link scrollbar to listbox
+my_scrollbar.config(command=my_listbox.yview)
 my_listbox.grid(row=0, column=0)
 my_scrollbar.grid(row=0, column=1, sticky="NS")
 
