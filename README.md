@@ -3,5 +3,5 @@ Checklist is a desktop GUI application which allows users to add, remove and sav
 
 ## Screenshot
 <p align="center">
-    <img alt="checklist app screenshot" src="https://raw.githubusercontent.com/zarexalvindaria/checklist-app/main/img/checklist-snapshot.png" />
+    <img width=400 alt="checklist app screenshot" src="https://raw.githubusercontent.com/zarexalvindaria/checklist-app/main/img/checklist-snapshot.png" />
 </p>
